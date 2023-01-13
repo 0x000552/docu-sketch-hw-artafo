@@ -13,6 +13,18 @@ export class AwesomeIconGeneratorComponent {
   isIconHidden = true;
 
   generateIcon() {
-   
+    this.isButtonDisabled = true
+    this.isIconHidden = false
+
+    let iconKey = Object.keys(icons)
+    const randomIconKey  = iconKey[Math.floor(Math.random()*iconKey.length)] as keyof typeof icons
+
+    this.generatedIcon = icons[randomIconKey] as icons.IconDefinition
+
+    setTimeout(() => {
+      this.isButtonDisabled = false;
+      this.isIconHidden = true;
+    }, 3000)
   }
+  
 }
