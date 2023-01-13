@@ -1,1 +1,4 @@
-<p>awesome-icon-generator works!</p>
+<div class="main">
+    <div class="icon-container"><fa-icon [style.visibility]="isIconHidden ? 'hidden' : 'visible'" [icon]="generatedIcon" size="3x"></fa-icon></div>
+    <button [disabled]="isButtonDisabled" (click)="generateIcon()">Generate!</button>
+</div>
